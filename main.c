@@ -1,9 +1,9 @@
 
-
 // The idea is that if two words match each other, function match() should skip matching word,
 // returning posititon of the following word
 
 #include <stdio.h>
+
 
 int is_ch(char ch)
 {
@@ -30,10 +30,15 @@ int main()
 	int a[100], b[10];
 	int i = 0, j = 0, pos = 0;
 
-	printf("\n Input string: ");
+	printf(" Input string: ");
 	while ((a[i] = getchar()) != '\n')
 	{
 		i++;
+		if (i == 100)
+		{
+			printf("\n ERROR: You entered too many characters.\n");
+			return -1;
+		}
 	}
 	a[i] = '\0';
 
@@ -41,6 +46,11 @@ int main()
 	while ((b[j] = getchar()) != '\n')
 	{
 		j++;
+		if (i == 10)
+		{
+			printf("\n ERROR: You entered too many characters.\n");
+			return -1;
+		}
 	}
 	b[j] = '\0';
 
