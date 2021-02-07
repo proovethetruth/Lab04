@@ -3,13 +3,12 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
-# User-specific files
-*.sln
+*sln
 *.vcxproj
-*.vcxproj.filters
-*.gitignore
-*.gitattributes
+*.filters
+*.user
 
+# User-specific files
 *.rsuser
 *.suo
 *.user
