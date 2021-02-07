@@ -30,7 +30,7 @@ int main()
 	int a[100], b[10];
 	int i = 0, j = 0, pos = 0;
 
-	printf(" Input string: ");
+	printf("\n Input string: ");
 	while ((a[i] = getchar()) != '\n')
 	{
 		i++;
