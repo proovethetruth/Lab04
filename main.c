@@ -51,6 +51,11 @@ int main()
 			printf("\n ERROR: You entered too many characters.\n");
 			return -1;
 		}
+		if (!is_ch(b[i]))
+		{
+			printf("\n ERROR: Input one word, using letters.\n");
+			return -2;
+		}
 	}
 	b[j] = '\0';
 
