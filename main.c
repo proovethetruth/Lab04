@@ -27,9 +27,10 @@ int main() {
 	}
 	b[j] = '\0';
 
-	// "never gonna give you up\0"
+	// "never gongonna give you up\0"
 	// "gonna\0"
-
+	// "never gongonna give you up\0"
+	printf("\n -----------------------------------------------------\n Result: ");
 	for (i = 0, j = 0; a[i] != '\0'; i++)
 	{
 		if (b[j] != '\0')
@@ -40,6 +41,7 @@ int main() {
 			{
 				while (is_ch(a[i]))
 				{
+					printf("%c", a[i]);
 					i++;
 				}
 				j = 0;
@@ -47,9 +49,9 @@ int main() {
 		}
 		else
 		{
-			printf("\n MATCH!\n");
-			break;
+			printf("%c", a[i]);
 		}
 
 	}
+	printf("\n");
 }
