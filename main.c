@@ -10,7 +10,7 @@ int is_ch(char ch)
 	return ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z'));
 }
 
-int match(int *str, int *word, int i)
+int match(int* str, int* word, int i)
 {
 	int current = 0;
 	while (is_ch(str[i]))
@@ -25,10 +25,10 @@ int match(int *str, int *word, int i)
 	return i;									// returning position of the following word
 }
 
-int main() 
+int main()
 {
 	int a[100], b[10];
-	int i = 0, j = 0, pos = 0;
+	int i = 0, pos = 0;
 
 	printf("\n Input string: ");
 	while ((a[i] = getchar()) != '\n')
@@ -41,27 +41,27 @@ int main()
 		}
 	}
 	a[i] = '\0';
+	i = 0;
 
 	printf(" Input word: ");
-	while ((b[j] = getchar()) != '\n')
+	while ((b[i] = getchar()) != '\n')
 	{
-		j++;
+		i++;
 		if (i == 10)
 		{
 			printf("\n ERROR: You entered too many characters.\n");
 			return -1;
 		}
-		if (!is_ch(b[i]))
+		if (!is_ch(b[i-1]))
 		{
 			printf("\n ERROR: Input one word, using letters.\n");
 			return -2;
 		}
 	}
-	b[j] = '\0';
+	b[i] = '\0';
+	i = 0;
 
 	printf("\n -----------------------------------------------------\n Result: ");
-
-	i = 0;
 
 	while (a[i] != '\0')
 	{
@@ -87,7 +87,7 @@ int main()
 				i++;
 			}
 		}
-			
+
 	}
 	printf("\n");
 }
