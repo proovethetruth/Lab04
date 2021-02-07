@@ -1,5 +1,7 @@
 
-// Ввести строку и слово. Вывести строку, удалив из него все вхождения слова.
+
+// The idea is that if two words match each other, function match() should skip matching word,
+// returning posititon of the following word
 
 #include <stdio.h>
 
@@ -14,13 +16,13 @@ int match(int *str, int *word, int i)
 	while (is_ch(str[i]))
 	{
 		if (str[i] != word[current])
-			return -1;
+			return -1;							// doesn't match
 		i++;
 		current++;
 	}
-	while (!is_ch(str[i]))
+	while (!is_ch(str[i]) && (str[i] != '\0'))
 		i++;
-	return i;
+	return i;									// returning position of the following word
 }
 
 int main() 
@@ -46,11 +48,9 @@ int main()
 
 	i = 0;
 
-	// Если слова совпадают, функция должна вернуть целое j и записать в переменную pos
-
 	while (a[i] != '\0')
 	{
-		if ((pos = match(&a, &b, i)) < i)
+		if ((pos = match(&a, &b, i)) < i)			// if words don't match
 		{
 			while (is_ch(a[i]))
 			{
@@ -66,7 +66,7 @@ int main()
 		else
 		{
 			i = pos;
-			while (!is_ch(a[i]))
+			while (!is_ch(a[i]) && a[i] != '\0')
 			{
 				printf("%c", a[i]);
 				i++;
